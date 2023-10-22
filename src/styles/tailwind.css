@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+
+  :root {
+    --primary: 266, 83%, 34%;
+    --bg-secondary: 263, 62%, 96%;
+  }
+
+}

@@ -1,0 +1,15 @@
+$theme-colors: (
+        "primary": #470F91,
+);
+
+@import "react-bootstrap-range-slider/dist/react-bootstrap-range-slider.scss";
+
+
+.range-slider__wrap {
+  height: fit-content;
+
+  input[type="range"].range-slider {
+    height: 2rem;
+  }
+}
+
