@@ -1,4 +1,8 @@
-import axios, { AxiosRequestConfig, AxiosRequestHeaders, AxiosResponse } from 'axios';
+import axios, {
+  AxiosRequestConfig,
+  AxiosRequestHeaders,
+  AxiosResponse,
+} from 'axios';
 
 const axiosClient = axios.create({
   baseURL: '/api',
@@ -9,7 +13,9 @@ const defaultHeaders = (): Record<string, string> => ({
   'Content-Type': 'application/json',
 });
 
-const defaultOptions = (customHeaders?: AxiosRequestHeaders): AxiosRequestConfig => {
+const defaultOptions = (
+  customHeaders?: AxiosRequestHeaders,
+): AxiosRequestConfig => {
   const headers = {
     ...defaultHeaders(),
     ...customHeaders,
@@ -18,7 +24,9 @@ const defaultOptions = (customHeaders?: AxiosRequestHeaders): AxiosRequestConfig
     headers,
   };
 };
-const request = async (customOptions: AxiosRequestConfig): Promise<AxiosResponse> => {
+const request = async (
+  customOptions: AxiosRequestConfig,
+): Promise<AxiosResponse> => {
   const { headers, ...requestOptions } = customOptions;
   const options = {
     ...defaultOptions(headers as AxiosRequestHeaders),
@@ -32,13 +40,20 @@ const request = async (customOptions: AxiosRequestConfig): Promise<AxiosResponse
   }
 };
 
-const requestData = async (customOptions: AxiosRequestConfig): Promise<AxiosResponse['data']> => {
+const requestData = async (
+  customOptions: AxiosRequestConfig,
+): Promise<AxiosResponse['data']> => {
   const response = await request(customOptions);
   return response.data;
 };
 
 const getUrlParams = (
-  params: string | string[][] | Record<string, string> | URLSearchParams | undefined,
+  params:
+    | string
+    | string[][]
+    | Record<string, string>
+    | URLSearchParams
+    | undefined,
 ) => new URLSearchParams(params).toString();
 
 const http = {
@@ -76,12 +91,4 @@ const http = {
   getUrlParams,
 };
 
-function assertParamExists(method: string, param: string, value: any) {
-  if (typeof value === 'undefined' || value === null) {
-    throw new Error(
-      `Assertion error: in method '${method}' required parameter '${param}' was not present`,
-    );
-  }
-}
-
-export { http, assertParamExists };
+export { http };

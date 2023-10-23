@@ -10,15 +10,13 @@ function LoanApplicationPage() {
   const [loanResult, setLoanResult] = useState<LoanDecisionProcessResult>();
 
   const sendLoanRequest = async (loanRequest: LoanRequest) => {
-    console.log('SEND POST');
-    console.log(loanRequest);
     setLoanResult(await LoanServiceClient.applyLoan(loanRequest));
   };
 
   return (
     <>
       <section
-        className="min-h-fin min-w-fit py-8 bg-bg-secondary"
+        className="min-h-fin min-w-fit bg-bg-secondary py-8"
         style={{ background: '#F3EEFB' }}
       >
         <Container>
