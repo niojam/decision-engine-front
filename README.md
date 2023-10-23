@@ -16,3 +16,4 @@ For running the application locally use
 
 1. Header has no functionality
 2. No react router nor global store.
+3. Sign agreement button does nothing.
