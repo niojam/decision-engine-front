@@ -15,10 +15,7 @@ function LoanApplicationPage() {
 
   return (
     <>
-      <section
-        className="min-h-fin min-w-fit bg-bg-secondary py-8"
-        style={{ background: '#F3EEFB' }}
-      >
+      <section className="min-h-fin min-w-fit bg-bg-secondary py-8">
         <Container>
           <h2 className="mb-8 text-2xl font-bold tracking-tight text-gray-900">
             Act. Apply for a loan.
