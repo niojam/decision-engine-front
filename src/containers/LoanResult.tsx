@@ -19,7 +19,7 @@ function LoanResult({ loanResult }: LoanResultProps) {
   return (
     <div className="flex justify-end">
       <dl className="w-64 space-y-8 xl:w-80">
-        {loanResult?.decision === Result.REJECTED ? (
+        {loanResult?.decision === Result.REJECTED && !loanResult?.details ? (
           <div className="flex flex-col-reverse gap-y-4">
             <dt className="text-base leading-7 text-red-400">
               Please try with lower loan amount
