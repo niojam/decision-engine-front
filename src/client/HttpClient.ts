@@ -3,6 +3,7 @@ import axios, {
   AxiosRequestHeaders,
   AxiosResponse,
 } from 'axios';
+import { toast } from 'react-toastify';
 
 const axiosClient = axios.create({
   baseURL: '/api',
@@ -35,8 +36,7 @@ const request = async (
   try {
     return await axiosClient(options);
   } catch (error: any) {
-    console.error(error);
-    throw error;
+    toast.error('Uuuups something went wrong');
   }
 };
 
